@@ -84,3 +84,10 @@ GTAGS
 *.orig
 *~
 \#*#
+
+
+build.sh
+clean.sh
+env_setup.sh
+zip/*
+ramdisk/*
