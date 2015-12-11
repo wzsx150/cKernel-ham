@@ -519,6 +519,27 @@ static inline int mdss_mdp_line_buffer_width(void)
 	return MAX_LINE_BUFFER_WIDTH;
 }
 
+static inline bool mdss_mdp_ctl_is_power_off(struct mdss_mdp_ctl *ctl)
+{
+	return (ctl->power_on == false);
+}
+
+static inline bool mdss_mdp_ctl_is_power_on_interactive(
+	struct mdss_mdp_ctl *ctl)
+{
+	return (ctl->power_on == true);
+}
+
+static inline bool mdss_mdp_ctl_is_power_on(struct mdss_mdp_ctl *ctl)
+{
+	return !(ctl->power_on == false);
+}
+
+static inline bool mdss_mdp_ctl_is_power_on_lp(struct mdss_mdp_ctl *ctl)
+{
+	return !(ctl->power_on == false) && !(ctl->power_on == true) ;
+}
+
 irqreturn_t mdss_mdp_isr(int irq, void *ptr);
 int mdss_iommu_attach(struct mdss_data_type *mdata);
 int mdss_iommu_dettach(struct mdss_data_type *mdata);
